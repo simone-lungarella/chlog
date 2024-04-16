@@ -24,3 +24,13 @@ The following step will retrieve each _fix_ commit to create the bugfix section 
 `git --no-pager log --oneline --format='%s' --since='2024-01-01' | grep 'fix'`
 
 ### What the result looks like
+
+```
+# changelogger
+
+## Features
+feat: Added readme.md
+
+## Fixes
+fix: Improved readme content
+```
