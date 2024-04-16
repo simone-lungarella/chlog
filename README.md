@@ -25,12 +25,14 @@ The following step will retrieve each _fix_ commit to create the bugfix section 
 
 ### What the result looks like
 
-```
+```md
 # changelogger
 
 ## Features
-feat: Added readme.md
+- Added bash script to generate changelog
+- Added readme.md
 
-## Fixes
-fix: Improved readme content
+## Bugfixes
+- Improved readme content
+
 ```
