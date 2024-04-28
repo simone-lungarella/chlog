@@ -34,5 +34,4 @@ The following step will retrieve each _fix_ commit to create the bugfix section 
 
 ## Bugfixes
 - Improved readme content
-
 ```

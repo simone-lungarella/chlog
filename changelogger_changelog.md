@@ -1,8 +1,12 @@
 # changelogger
 
-## Features
+
+## Change Log
+
+### Features
+- Added changelog example
 - Added bash script to generate changelog
 - Added readme.md
 
-## Bugfixes
+### Bugfixes
 - Improved readme content
