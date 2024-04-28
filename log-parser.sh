@@ -37,6 +37,7 @@ echo "# $repository_name $repository_version
 " > "$file_name"
 
 echo "## Change Log
+Showing changes from $since
 " >> "$file_name"
 
 features=$(git --no-pager log --oneline --format='%s' --since="$since" | grep 'feat')
