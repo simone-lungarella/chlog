@@ -3,6 +3,7 @@
 - [Log Parser](#log-parser)
   - [Description](#description)
     - [How it works](#how-it-works)
+    - [To be fixed](#to-be-fixed)
     - [What the result looks like](#what-the-result-looks-like)
 
 ## Description
@@ -22,6 +23,9 @@ The following step will retrieve each _feature_ commit to create the feature sec
 The following step will retrieve each _fix_ commit to create the bugfix section of the changelog
 
 `git --no-pager log --oneline --format='%s' --since='2024-01-01' | grep 'fix'`
+
+### To be fixed
+- [ ] Requires `git remote update` to be executed, could be executed at start
 
 ### What the result looks like
 

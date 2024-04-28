@@ -30,10 +30,10 @@ done
 repository_name=$(basename `git rev-parse --show-toplevel`)
 file_suffix="_changelog.md"
 file_name="$repository_name$file_suffix"
+repository_version=$(git describe --tags --abbrev=0)
 
 # Setting up file title
-echo "# $repository_name
-
+echo "# $repository_name $repository_version
 " > "$file_name"
 
 echo "## Change Log
