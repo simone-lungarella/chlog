@@ -3,7 +3,7 @@
 - [Log Parser](#log-parser)
   - [Description](#description)
     - [Usage](#usage)
-    - [To be fixed](#to-be-fixed)
+    - [Missing](#missing)
     - [What the result looks like](#what-the-result-looks-like)
 
 ## Description
@@ -16,12 +16,14 @@ Usage: ./log-parser.sh [--since <date> | --latest] [--help]
 - latest: Generate changelog for commits executed in the latest software version. When used, `--since` is ignored.
 - help: Show a simple manual that describe the usage.
 
-### To be fixed
+### Missing
 - [X] Requires `git remote update` to be executed before changelog generated, could be executed at start
 - [ ] Make it executable from everywhere, and downlodable
 - [X] Add argument to handle versions
 - [ ] Handle long commit messages
 - [X] Add --help
+- [ ] Add --rich to handle long commits messages as summary of a specific feature/bug
+- [ ] Organize code in multiple files
 
 ### What the result looks like
 This project respects the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) and the git history is mantained as much clean is possible. You can check the generated changelog [here](changelogger_changelog.md).

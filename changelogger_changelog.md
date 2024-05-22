@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file. The format 
 Showing changes from 2005-01-01
 
 ### Features
+- Implemented help and latest operator
 - Added file description
 - Now showing starting date of changelog
 - Handled project version with git tags

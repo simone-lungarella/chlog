@@ -63,7 +63,6 @@ if [[ "$LATEST" == true ]]; then
     SINCE=$latest_version_creation
 fi
 
-
 if [ "$LATEST" = true ]; then
 echo "## Change Log
 Showing changes made in $repository_version
@@ -74,12 +73,13 @@ Showing changes from $SINCE
 " >> "$file_name"
 fi
 
-features=$(git --no-pager log --oneline --format='%s' --since="$SINCE" | grep 'feat')
+all_messages=$(git --no-pager log --oneline --format='%B' --since="$SINCE")
+features=$(echo "$all_messages" | grep 'feat')
 
 echo "### Features
 $features" | sed -e 's/feat[ure]\?!\?\((.*)\)\? \?:/-/g' | uniq >> "$file_name"
 
-bugfixes=$(git --no-pager log --oneline --format='%s' --since="$SINCE" | grep 'fix')
+bugfixes=$(echo "$all_messages" | grep 'fix')
 
 echo "
 ### Bugfixes
