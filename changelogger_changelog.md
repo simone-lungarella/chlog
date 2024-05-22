@@ -1,4 +1,4 @@
-# changelogger v0.1
+# changelogger v0.2
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## Change Log
@@ -14,5 +14,6 @@ Showing changes from 2005-01-01
 - Added readme.md
 
 ### Bugfixes
+- Increased number of lines in example changelog
 - Removed necessity of manual remote update before script execution
 - Improved readme content
