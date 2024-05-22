@@ -26,6 +26,9 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
+# Updating project
+git remote update
+
 # Get basename
 repository_name=$(basename `git rev-parse --show-toplevel`)
 file_suffix="_changelog.md"
