@@ -2,40 +2,23 @@
 
 - [Log Parser](#log-parser)
   - [Description](#description)
-    - [How it works](#how-it-works)
+    - [How to use](#how-to-use)
+      - [Arguments](#arguments)
     - [To be fixed](#to-be-fixed)
     - [What the result looks like](#what-the-result-looks-like)
 
 ## Description
-This bash script parse git logs in order to create a _changelog.md_ file. Each commit message that contains the keyword _fix_ will be considered a fix, each message that contains the keyword _feat_ will be considered a feature.
+This bash script parses git logs in order to create a _changelog.md_ file. Each commit message that contains the keyword _fix_ will be considered a fix, each message that contains the keyword _feat_ will be considered a feature.
 
-### How it works
-The first step retrieves information about the repository using the command: 
+### How to use
+Currently, to execute the script, you need to move it on the root of your project and execute `./log-parser.sh` script. In future will be possible to execute it as a cli tool without the necessity to move the script itself.
 
-`basename git rev-parse --show-toplevel`
-
-With this information a _changelog_repo-name.md_ file will be created.
-
-The following step will retrieve each _feature_ commit to create the feature section of the changelog
-
-`git --no-pager log --oneline --format='%s' --since='2024-01-01' | grep 'feat'`
-
-The following step will retrieve each _fix_ commit to create the bugfix section of the changelog
-
-`git --no-pager log --oneline --format='%s' --since='2024-01-01' | grep 'fix'`
+#### Arguments
+- `--since`: optional argument, supports a date as value in format `yyyy-MM-dd`, sets the starting point of logs to be parsed. When not set, `2005-01-01` is considered the starting point.
 
 ### To be fixed
-- [ ] Requires `git remote update` to be executed, could be executed at start
+- [X] Requires `git remote update` to be executed before changelog generated, could be executed at start
+- [ ] Make it executable from everywhere, and downlodable
 
 ### What the result looks like
-
-```md
-# changelogger
-
-## Features
-- Added bash script to generate changelog
-- Added readme.md
-
-## Bugfixes
-- Improved readme content
-```
+This project respects the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) and the git history is mantained as much clean is possible. You can check the generated changelog [here](changelogger_changelog.md).

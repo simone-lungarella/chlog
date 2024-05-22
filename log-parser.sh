@@ -34,6 +34,9 @@ repository_version=$(git describe --tags --abbrev=0)
 
 # Setting up file title
 echo "# $repository_name $repository_version
+
+All notable changes to this project will be documented in this file.
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and this project adheres to [Semantic Versioning](https://semver.org/).
 " > "$file_name"
 
 echo "## Change Log
