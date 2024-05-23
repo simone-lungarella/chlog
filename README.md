@@ -13,8 +13,8 @@ This bash script parses git logs in order to create a _changelog.md_ file. Each 
 Usage: ./log-parser.sh [--since <date> | --latest] [--help]
 
 - `--since`: optional argument, supports a date as value in format `yyyy-MM-dd`, sets the starting point of logs to be parsed. When not set, `2005-01-01` is considered the starting point.
-- latest: Generate changelog for commits executed in the latest software version. When used, `--since` is ignored.
-- help: Show a simple manual that describe the usage.
+- `--latest`: Generate changelog for commits executed in the latest software version. When used, `--since` is ignored.
+- `--help`: Show a simple manual that describe the usage.
 
 ### Missing
 - [X] Requires `git remote update` to be executed before changelog generated, could be executed at start
