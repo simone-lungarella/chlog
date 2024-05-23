@@ -7,7 +7,7 @@
     - [What the result looks like](#what-the-result-looks-like)
 
 ## Description
-This bash script parses git logs in order to create a _changelog.md_ file. Each commit message that contains the keyword _fix_ will be considered a fix, each message that contains the keyword _feat_ will be considered a feature.
+This bash script parses git logs in order to create a _changelog.md_ file. Each commit message that contains the keyword _fix_ will be considered a fix, each message that contains the keyword _feat_ will be considered a feature according to the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/). The git history of this project is mantained as much clean is possible.
 
 ### Usage
 Usage: ./log-parser.sh [--since <date> | --latest] [--help]
@@ -18,12 +18,10 @@ Usage: ./log-parser.sh [--since <date> | --latest] [--help]
 
 ### Missing
 - [X] Requires `git remote update` to be executed before changelog generated, could be executed at start
-- [ ] Make it executable from everywhere, and downlodable
 - [X] Add argument to handle versions
-- [ ] Handle long commit messages
 - [X] Add --help
-- [ ] Add --rich to handle long commits messages as summary of a specific feature/bug
 - [ ] Organize code in multiple files
+- [ ] Handle long commits messages as summary of a specific feature/bug
 
 ### What the result looks like
-This project respects the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) and the git history is mantained as much clean is possible. You can check the generated changelog [here](changelogger_changelog.md).
+You can check the generated changelog [here](changelogger_changelog.md).

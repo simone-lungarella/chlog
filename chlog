@@ -1,9 +1,11 @@
 #!/bin/bash
 
+set -e
+
 usage() {
     echo "Usage: $0 [--since <date> | --latest] [--help]"
     echo
-    echo "Options:"
+    echo "Command options:"
     echo "  --since <date>   Specify the start date for the changelog (default: 2005-01-01)."
     echo "  --latest         Generate changelog for commits executed in the latest software version. When used, --since is ignored."
     exit 0
@@ -43,14 +45,23 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-# Updating project
-git remote update
+# Updating project silently
+git remote update > /dev/null
 
 # Get basename
 repository_name=$(basename `git rev-parse --show-toplevel`)
 file_suffix="_changelog.md"
+
 file_name="$repository_name$file_suffix"
-repository_version=$(git describe --tags --abbrev=0)
+echo "Generating changlog with name: $file_name"
+
+if repository_version=$(git describe --tags --abbrev=0 2>/dev/null); then
+    echo "Latest version found: $repository_version"
+else
+    repository_version="0.1"
+    echo "No tags found, using default: $repository_version"
+fi
+
 latest_version_creation=$(git for-each-ref --sort=-creatordate --format '%(creatordate)' refs/tags | head -n 1)
 
 # Setting up file title
@@ -60,19 +71,20 @@ All notable changes to this project will be documented in this file. The format 
 
 if [[ "$LATEST" == true ]]; then
     SINCE=$latest_version_creation
+    echo "Reading logs of latest version only"
 fi
 
 if [ "$LATEST" = true ]; then
-echo "## Change Log
+    echo "## Change Log
 Showing changes made in $repository_version
 " >> "$file_name"
 else
-echo "## Change Log
+    echo "## Change Log
 Showing changes from $SINCE
 " >> "$file_name"
 fi
 
-all_messages=$(git --no-pager log --oneline --format='%B' --since="$SINCE")
+all_messages=$(git log --oneline --format='%B' --since="$SINCE")
 features=$(echo "$all_messages" | grep 'feat')
 
 echo "### Features

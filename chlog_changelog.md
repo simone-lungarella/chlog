@@ -15,6 +15,7 @@ Showing changes from 2005-01-01
 - Added readme.md
 
 ### Bugfixes
+- Changed name to a shorter one
 - Corrected typos in readme
 - Improved script performances
 - Increased number of lines in example changelog
