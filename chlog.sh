@@ -6,7 +6,6 @@ usage() {
     echo "Options:"
     echo "  --since <date>   Specify the start date for the changelog (default: 2005-01-01)."
     echo "  --latest         Generate changelog for commits executed in the latest software version. When used, --since is ignored."
-    echo "  --help           Show this help message and exit."
     exit 0
 }
 

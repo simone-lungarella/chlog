@@ -1,6 +1,6 @@
-# Log Parser
+# CHLOG
 
-- [Log Parser](#log-parser)
+- [CHLOG](#chlog)
   - [Description](#description)
     - [Usage](#usage)
     - [Missing](#missing)
